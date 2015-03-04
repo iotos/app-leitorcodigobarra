@@ -17,3 +17,17 @@ angular.module('starter', ['ionic','ngCordova'])
     }
   });
 })
+
+.controller("BarCode", function( $scope, $cordovaBarcodeScanner){
+    
+    $scope.scanBarcode = function(){
+     $cordovaBarcodeScanner.scan().then(function(imageData){
+         // alert(imageData.text);
+        // $('#txtCode').val('teste');
+         document.getElementById('txtCode').value = imageData.text;
+    }, function(error){
+         console.log('Deu Merda'+error);
+     });
+    }
+});
+                                        
