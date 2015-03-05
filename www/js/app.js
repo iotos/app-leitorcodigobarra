@@ -24,7 +24,8 @@ angular.module('starter', ['ionic','ngCordova'])
      $cordovaBarcodeScanner.scan().then(function(imageData){
          // alert(imageData.text);
         // $('#txtCode').val('teste');
-         document.getElementById('txtCode').value = imageData.text;
+        // document.getElementById('txtCode').value = imageData.text;
+         $('#txtCode').val(imageData.text);
     }, function(error){
          console.log('Deu Merda'+error);
      });
